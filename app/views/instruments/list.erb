@@ -1,0 +1,11 @@
+<h1> My Muses </h1>
+
+<ul>
+  <%@names_of_instruments.each do |name|%>
+    <li>
+      <a href="/instruments/<%= Instrument.find_by(name: name).id %>">
+        <%= name %>
+      </a>
+    </li>
+  <%end%>
+</ul>

@@ -2,6 +2,17 @@
 <p>Age: <%= @artist.age %> </p>
 <p>Bio: <%= @artist.bio %> </p>
 
+<h2>Here are all your Instruments!</h2>
+<ul>
+  <% @this_a_instruments.each do |name| %>
+  <li>
+    <a href="/instruments/<%=Instrument.find_by(name: name).id%>">
+    <%= name %>
+    </a>
+  </li>
+  <% end %>
+</ul>
+
 <a href="/artists/<%= @artist.id %>/edit">Edit <%= @artist.name %>'s information.</a>
 <br/>
 <a href="/artists">Back to the list of artists.</a>
